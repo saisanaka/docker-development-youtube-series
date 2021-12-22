@@ -19,14 +19,6 @@ steps:
   - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   - docker build ./golang -t aimvector/golang:1.0.0
   - docker push aimvector/golang:1.0.0
-
-services:
-- name: docker
-  image: docker:dind
-  privileged: true
-  volumes:
-  - name: dockersock
-    path: /var/run
 volumes:
 - name: dockersock
   temp: {}
